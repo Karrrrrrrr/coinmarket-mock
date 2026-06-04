@@ -1,0 +1,7 @@
+
+services:
+  coinmarket-mock:
+    ports:
+      - "18000:18000"
+    container_name: coinmarket-mock
+    image: swr.cn-north-4.myhuaweicloud.com/kar/coinmarket-mock:v1.0
