@@ -17,7 +17,7 @@ type Data struct {
 	Symbol string `json:"symbol"`
 	Name   string `json:"name"`
 	Amount int    `json:"amount"`
-	Quote  Quote  `json:"data"`
+	Quote  Quote  `json:"quote"`
 }
 type Status struct {
 	Timestamp    time.Time `json:"timestamp"`
@@ -29,7 +29,7 @@ type Status struct {
 }
 
 type Quote struct {
-	USD         USD       `json:"quote"`
+	USD         USD       `json:"USD"`
 	LastUpdated time.Time `json:"last_updated"`
 }
 type USD struct {
