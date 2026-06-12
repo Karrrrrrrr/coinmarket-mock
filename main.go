@@ -13,11 +13,12 @@ type Response struct {
 }
 
 type Data struct {
-	Id     int    `json:"id"`
-	Symbol string `json:"symbol"`
-	Name   string `json:"name"`
-	Amount int    `json:"amount"`
-	Quote  Quote  `json:"quote"`
+	Id          int       `json:"id"`
+	Symbol      string    `json:"symbol"`
+	Name        string    `json:"name"`
+	Amount      int       `json:"amount"`
+	Quote       Quote     `json:"quote"`
+	LastUpdated time.Time `json:"last_updated"`
 }
 type Status struct {
 	Timestamp    time.Time `json:"timestamp"`
@@ -29,8 +30,7 @@ type Status struct {
 }
 
 type Quote struct {
-	USD         USD       `json:"USD"`
-	LastUpdated time.Time `json:"last_updated"`
+	USD USD `json:"USD"`
 }
 type USD struct {
 	Price       float64   `json:"price"`
@@ -53,8 +53,8 @@ func main() {
 						Price:       1 - rand.Float64()/10, // 介于(0.9-1]之间
 						LastUpdated: time.Now(),
 					},
-					LastUpdated: time.Now(),
 				},
+				LastUpdated: time.Now(),
 			},
 			Status: Status{
 				Timestamp:    time.Now(),
